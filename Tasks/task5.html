@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First and Last Child Styling</title>
+    <style>
+        .parent {
+            border: 2px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .child {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="parentDiv">
+        <div class="child" id="firstChild">First Child</div>
+        <div class="child" id="middleChild">Middle Child</div>
+        <div class="child" id="lastChild">Last Child</div>
+    </div>
+
+    <button id="Button">Style First and Last Children</button>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let parentDiv = document.getElementById('parentDiv');
+            let firstChild = parentDiv.firstElementChild;
+            let lastChild = parentDiv.lastElementChild;
+
+            firstChild.style.backgroundColor = 'lightgreen';
+            lastChild.style.backgroundColor = 'lightblue';
+        });
+    </script>
+</body>
+</html>

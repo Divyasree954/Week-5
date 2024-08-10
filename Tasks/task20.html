@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body{
+            background-color: pink;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .todo-item input[type="text"] {
+            margin-right: 10px;
+        }
+        .todo-item button {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <input type="text" id="newTaskInput" placeholder="New task">
+    <button id="Button">Add Task</button>
+    <div id="todoList"></div>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let taskText = document.getElementById('newTaskInput').value;
+            if (taskText.trim() !== '') {
+                let todoItem = document.createElement('div');
+                todoItem.classList.add('todo-item');
+
+                let taskInput = document.createElement('input');
+                taskInput.type = 'text';
+                taskInput.value = taskText;
+                taskInput.readOnly = true;
+
+                let editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', function() {
+                    if (taskInput.readOnly) {
+                        taskInput.readOnly = false;
+                        taskInput.focus();
+                        editButton.textContent = 'Save';
+                    } else {
+                        taskInput.readOnly = true;
+                        editButton.textContent = 'Edit';
+                    }
+                });
+
+                let deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', function() {
+                    todoItem.remove();
+                });
+
+                todoItem.appendChild(taskInput);
+                todoItem.appendChild(editButton);
+                todoItem.appendChild(deleteButton);
+
+                document.getElementById('todoList').appendChild(todoItem);
+
+                document.getElementById('newTaskInput').value = '';
+            }
+        });
+    </script>
+</body>
+</html>

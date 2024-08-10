@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Background Color</title>
+    <style>
+        #colorButton {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="Button">Toggle Background Color</button>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let button = this;
+            if (button.style.backgroundColor === 'skyblue') {
+                button.style.backgroundColor = 'pink';
+            } else {
+                button.style.backgroundColor = 'skyblue';
+            }
+        });
+    </script>
+</body>
+</html>

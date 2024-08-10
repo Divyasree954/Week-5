@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Name">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="errorMessage" style="color: rgb(122, 104, 187);"></p>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let errorMessage = '';
+
+            if (!name) {
+                errorMessage += 'Name is required. ';
+            }
+            if (!email) {
+                errorMessage += 'Email is required.';
+            }
+
+            document.getElementById('errorMessage').textContent = errorMessage;
+
+            if (!errorMessage) {
+                console.log('Form submitted successfully.');
+            }
+        });
+    </script>
+</body>
+</html>

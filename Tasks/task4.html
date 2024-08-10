@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Parent Border Color</title>
+    <style>
+        .parent {
+            border: 2px solid black;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .child {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" id="parentDiv">
+        <div class="child" id="childElement">Child Element</div>
+    </div>
+
+    <button id="Button">Change Parent Border Color</button>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let childElement = document.getElementById('childElement');
+            let parentElement = childElement.parentElement;
+            parentElement.style.borderColor = 'red';
+        });
+    </script>
+</body>
+</html>

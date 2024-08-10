@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Append List Item</title>
+</head>
+<body>
+    <ul id="myList">
+        <li> 1</li>
+        <li> 2</li>
+        <li> 3</li>
+    </ul>
+    <button id="Button">Add Item</button>
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let newItem = document.createElement('li');
+            newItem.textContent = 'New Item';
+            document.getElementById('myList').appendChild(newItem);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .thumbnail {
+            width: 100px;
+            height: 75px;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        #largeImage {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <H1><B> <i>Interactive Image Gallery</i></B></H1>
+    <div class="gallery">
+        <img id="largeImage" src="https://hips.hearstapps.com/hmg-prod/images/nature-quotes-landscape-1648265299.jpg?crop=0.676xw:1.00xh;0.148xw,0&resize=640:*" alt="Large Image">
+        <div class="thumbnails">
+            <img src="https://media.istockphoto.com/id/1409728243/photo/aerial-view-of-woman-and-man-contemplating-summer-in-norway-canoeing-in-the-lake-lovatnet.jpg?s=612x612&w=0&k=20&c=8tkh5tQTeblUZQmTH_KI_xqiRTEOrQGTgml6bB8Qpdk=" class="thumbnail" data-large="https://media.istockphoto.com/id/1409728243/photo/aerial-view-of-woman-and-man-contemplating-summer-in-norway-canoeing-in-the-lake-lovatnet.jpg?s=612x612&w=0&k=20&c=8tkh5tQTeblUZQmTH_KI_xqiRTEOrQGTgml6bB8Qpdk=" class="thumbnail" alt="Thumbnail 1">
+            <img src="https://www.shutterstock.com/shutterstock/videos/1046650240/thumb/1.jpg?ip=x480" class="thumbnail" data-large="https://www.shutterstock.com/shutterstock/videos/1046650240/thumb/1.jpg?ip=x480" class="thumbnail" alt="Thumbnail 2">
+            <img src="https://cdn.pixabay.com/video/2020/10/19/52849-473336269_tiny.jpg" class="thumbnail" data-large="https://cdn.pixabay.com/video/2020/10/19/52849-473336269_tiny.jpg" alt="Thumbnail 3">
+            <img src="https://media.istockphoto.com/id/1308243001/photo/lovatnet-lake-beautiful-nature-norway.jpg?b=1&s=612x612&w=0&k=20&c=kZioSJKTxZiCkTbaOYelR_kv6IVvZGHcMrsBgupvjfY=" class="thumbnail" data-large="https://media.istockphoto.com/id/1308243001/photo/lovatnet-lake-beautiful-nature-norway.jpg?b=1&s=612x612&w=0&k=20&c=kZioSJKTxZiCkTbaOYelR_kv6IVvZGHcMrsBgupvjfY=" class="thumbnail" alt="Thumbnail 4">
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                let largeImageURL = thumbnail.getAttribute('data-large');
+                document.getElementById('largeImage').src = largeImageURL;
+            });
+        });
+    </script>
+</body>
+</html>

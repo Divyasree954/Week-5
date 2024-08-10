@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Last Child</title>
+</head>
+<body>
+    <div id="myDiv">
+        <div>Child 1</div>
+        <div>Child 2</div>
+        <div>Child 3</div>
+    </div>
+    <button id="Button">Remove Last Child</button>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let parentDiv = document.getElementById('myDiv');
+            if (parentDiv.lastElementChild) {
+                parentDiv.removeChild(parentDiv.lastElementChild);
+            }
+        });
+    </script>
+</body>
+</html>

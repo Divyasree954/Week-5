@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Class Example</title>
+    <style>
+        .myClass {
+            color: blue;
+        }
+        .toggledClass {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="myClass">1</div>
+    <div class="myClass">2</div>
+    <div class="myClass">3</div>
+    <button id="Button">Toggle</button>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            let elements = document.querySelectorAll('.myClass');
+            elements.forEach(element => {
+                element.classList.toggle('toggledClass');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Image Src</title>
+</head>
+<body>
+    <img id="myImage" src="https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?cs=srgb&dl=pexels-8moments-1266810.jpg&fm=jpg" alt="Original Image" width="200">
+    <button id="Button">Change Image</button>
+
+    <script>
+        document.getElementById('Button').addEventListener('click', function() {
+            document.getElementById('myImage').src = 'https://i.pinimg.com/736x/d5/0b/d2/d50bd25b9cc865495b31a97e7a1eed18.jpg';
+        });
+    </script>
+</body>
+</html>
